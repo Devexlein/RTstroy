@@ -56,14 +56,14 @@ if (quizButtonPrev.length > 0) {
             const currentSlide = el.parentElement.parentElement.parentElement.parentElement;
             const buttonNext = currentSlide.querySelector('.button_next');
             buttonNext.classList.remove('disabled');
-            console.log(currentSlide);
+            // console.log(currentSlide);
          });
       }
    }
 }
 
 const sendFormButton = document.querySelector('.quiz__next_final');
-sendFormButton.addEventListener("click", function(e) {
+sendFormButton.addEventListener("click", function (e) {
    const quizRadio = document.querySelectorAll('.quiz__radio-input');
    if (quizButtonPrev.length > 0) {
       for (let i = 0; i < quizRadio.length; i++) {
@@ -77,3 +77,12 @@ sendFormButton.addEventListener("click", function(e) {
    }
 });
 
+// Расширяем клик на область изображения
+function imageClick(element) {
+   element.parentElement.parentElement.querySelector('.radio__input').click();
+}
+
+// Расширяем клик на область поля
+function divClick(element) {
+   element.querySelector('.radio__input').click();
+}
