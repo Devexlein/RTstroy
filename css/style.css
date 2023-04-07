@@ -45,7 +45,7 @@ h6 {
 }
 
 img {
-   vertical-align: top;
+   vertical-align: middle;
 }
 
 a,
@@ -205,7 +205,7 @@ body.lock {
 .phone {
    position: relative;
    z-index: 3;
-   flex: 0 1 150px;
+   flex: 0 1 152px;
 }
 
 .phone__link {
@@ -325,6 +325,7 @@ a .card__image {
 }
 
 .card__image {
+   background-color: #85A78B;
    border: 3px solid #85A78B;
    border-radius: 15px;
    overflow: hidden;
@@ -378,6 +379,8 @@ a .card__image {
    flex: 1 1 auto;
 }
 
+
+
 /* ------- */
 .radio {
    display: inline-flex;
@@ -392,6 +395,7 @@ a .card__image {
 .radio__image {
    padding: 0px 0px 62% 0px;
    width: 100%;
+   background-color: #85A78B;
    overflow: hidden;
    border: 3px solid #85A78B;
    border-radius: 15px;
@@ -967,7 +971,7 @@ textarea:focus {
    }
 
    .phone {
-      flex: 0 1 131px;
+      flex: 0 1 133px;
    }
 
    .phone__link {
@@ -1161,6 +1165,8 @@ textarea:focus {
 
    .card__image {
       margin-bottom: 8px;
+      border: 2px solid #85A78B;
+      border-radius: 10px;
    }
 
    .card__inner {
@@ -1294,21 +1300,6 @@ textarea:focus {
       z-index: 2;
    }
 
-   /* меню бургер без JS */
-   /* .header:target .menu__body {
-      top: 0;
-   }
-
-   .header:target .menu__body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 80px;
-      width: 100%;
-      background-color: #cde6f4;
-   } */
-
    .menu__list {
       flex-direction: column;
       justify-content: center;
@@ -1402,47 +1393,6 @@ textarea:focus {
       bottom: 50%;
       transform: rotate(45deg) translate(0px, 50%);
    }
-
-   /* для меню бургер без JS*/
-   /* .close-icon-menu {
-      flex: 0 0 25px;
-      height: 25px;
-      position: relative;
-      margin: 3px 0px 0px 20px;
-   }
-
-   .close-icon-menu::before,
-   .close-icon-menu::after,
-   .icon-menu::before,
-   .icon-menu::after {
-      content: "";
-      background-color: #172929;
-      height: 2px;
-   }
-
-   .close-icon-menu::before,
-   .close-icon-menu::after {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 100%;
-   }
-
-   .close-icon-menu::before {
-      transform: rotate(45deg);
-   }
-
-   .close-icon-menu::after {
-      transform: rotate(-45deg);
-   }
-
-   .header:target .icon-menu {
-      display: none;
-   }
-
-   .header:target .close-icon-menu {
-      display: flex;
-   } */
 
    .title {
       font-size: 22px;
@@ -1817,11 +1767,12 @@ textarea:focus {
 /* ------------------------- */
 
 .header {
-   position: fixed;
+   /* position: fixed; */
    width: 100%;
    top: 0;
    left: 0;
-   background: url("../img/header-bg.png") top / cover no-repeat;
+   background: transparent;
+   /* background: url("../img/header-bg.png") top / cover no-repeat; */
    z-index: 50;
 }
 
@@ -1894,7 +1845,9 @@ textarea:focus {
 }
 
 .started {
-   padding: 125px 0px 40px 0px;
+   margin-top: -100px;
+   padding: 225px 0px 40px 0px;
+   background: url('../img/started-bg.jpg') top / cover no-repeat;
 }
 
 .started__container {
@@ -1922,7 +1875,9 @@ textarea:focus {
    margin-bottom: 50px;
 }
 
-.started__buttons {}
+.started__buttons {
+   display: flex;
+}
 
 .started__button-quiz {
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -1966,6 +1921,11 @@ textarea:focus {
 }
 
 @media (max-width: 991.98px) {
+   .started {
+      margin-top: -80px;
+      padding: 175px 0px 0px 0px;
+   }
+
    .started__image {
       right: -55%;
    }
@@ -1985,6 +1945,10 @@ textarea:focus {
 }
 
 @media (max-width: 767.98px) {
+   .started {
+      padding: 155px 0px 0px 0px;
+   }
+
    .started__image {
       right: -95%;
    }
@@ -2419,6 +2383,10 @@ textarea:focus {
    display: flex;
    justify-content: space-around;
    margin: 0px 0px 65px 0px;
+}
+
+.step-2 .radio_row {
+   cursor: pointer;
 }
 
 .step-2 .quiz__radio-wrap {
@@ -4104,6 +4072,14 @@ span.quiz__hide {
 
 .process__slide {
    height: calc((100% - 15px) / 2);
+
+}
+
+.process__item {
+   background-color: #85A78B;
+   border: 3px solid #85A78B;
+   border-radius: 15px;
+   overflow: hidden;
 }
 
 .process__image {
@@ -4113,8 +4089,6 @@ span.quiz__hide {
 
 .process__image img {
    max-width: 100%;
-   border: 3px solid #85A78B;
-   border-radius: 15px;
 }
 
 @media (max-width: 767.98px) {
@@ -4132,7 +4106,7 @@ span.quiz__hide {
       max-width: 90%;
    }
 
-   .process__image img {
+   .process__item {
       border: 2px solid #85A78B;
       border-radius: 10px;
    }
@@ -4302,6 +4276,13 @@ span.quiz__hide {
    min-width: 0;
 }
 
+.reports__item {
+   background-color: #172929;
+   border: 3px solid #172929;
+   border-radius: 15px;
+   overflow: hidden;
+}
+
 .reports__image {
    text-align: center;
    transition: all 0.8s ease 0s;
@@ -4309,8 +4290,6 @@ span.quiz__hide {
 
 .reports__image img {
    max-width: 100%;
-   border: 3px solid #172929;
-   border-radius: 15px;
 }
 
 .reports__image:hover,
@@ -4334,7 +4313,7 @@ span.quiz__hide {
       max-width: 90%;
    }
 
-   .reports__image img {
+   .reports__item {
       border: 2px solid #172929;
       border-radius: 10px;
    }
@@ -4556,7 +4535,7 @@ span.quiz__hide {
 }
 
 .footer__logo {
-   flex: 1 1 60%;
+   flex: 1 1 50%;
    margin: 0px 0px 20px 0px;
 }
 
@@ -4575,7 +4554,7 @@ span.quiz__hide {
 }
 
 .footer__phone {
-   flex: 0 1 225px;
+   flex: 0 1 230px;
 }
 
 .footer__policy {
@@ -4613,7 +4592,7 @@ span.quiz__hide {
    }
 
    .footer__phone {
-      flex: 0 1 150px;
+      flex: 0 1 155px;
    }
 
    .footer__socials a,
@@ -4677,7 +4656,7 @@ span.quiz__hide {
    }
 
    .footer__phone {
-      flex: 0 1 131px;
+      flex: 0 1 135px;
    }
 
    .footer__socials {
@@ -4785,6 +4764,7 @@ span.quiz__hide {
 .image-slider__slide {
    padding: 0px 0px 62% 0px;
    overflow: hidden;
+   background-color: #85A78B;
    border: 3px solid #85A78B;
    border-radius: 15px;
    margin: 0px 0px 15px 0px;
@@ -4821,6 +4801,7 @@ a .image-slider__image {
 .image-mini-slider__image {
    padding: 0px 0px 56.7% 0px;
    overflow: hidden;
+   background-color: #85A78B;
    border: 3px solid #85A78B;
    border-radius: 15px;
    position: relative;
@@ -4994,6 +4975,10 @@ a .image-slider__image {
       background: url('../img/projects/angle-right.svg') center / 15px no-repeat;
       width: 30px;
       height: 30px;
+   }
+
+   .image-mini-slider__image {
+      border-radius: 10px;
    }
 
    .box__title {
